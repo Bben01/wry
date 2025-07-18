@@ -796,7 +796,7 @@ impl InnerWebView {
     Self::add_script_to_execute_on_document_created(
       webview,
       String::from(
-        r#"Object.defineProperty(window, 'ipc', { value: Object.freeze({ postMessage: s=> window.chrome.webview.postMessage(s) }) });"#,
+        r#"Object.defineProperty(window, 'ipc_handler', { value: Object.freeze({ postMessage: s=> window.chrome.webview.postMessage(s) }) });"#,
       ),
     )?;
 
